@@ -24,16 +24,28 @@ This project implements a face recognition system using the Labeled Faces in the
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/face-recognition-app.git
-   cd face-recognition-app
+   git clone https://github.com/Brahim-DJ/FaceRecognition.git
+   cd FaceRecognition
    ```
-
-2. Install the required packages:
+2. Create a virtual python environment:
+   ```
+   python -m venv venv
+   ```
+3. Activate the virtual environment:
+   - On Linux/MacOs:
+      ```
+      source ./venv/bin/activate
+      ```
+   - On Windows:
+     ```
+     ./venv/bin/activate
+     ```
+4. Install the required packages:
    ```
    pip install -r requirements.txt
    ```
 
-3. Download the LFW dataset and update the `LFW_DATASET_PATH` in the script.
+5. Download the LFW dataset and update the `LFW_DATASET_PATH` in the script.
 
 ## Usage
 
