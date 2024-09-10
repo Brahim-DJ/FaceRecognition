@@ -38,7 +38,7 @@ This project implements a face recognition system using the Labeled Faces in the
       ```
    - On Windows:
      ```
-     ./venv/bin/activate
+     ./venv/Scripts/activate
      ```
 4. Install the required packages:
    ```
