@@ -75,7 +75,4 @@ This project implements a face recognition system using the Labeled Faces in the
 - `app.py`: Main Streamlit application
 - `requirements.txt`: List of Python dependencies
 - `README.md`: This file
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+- `db`: LFW generated embeddings 
