@@ -7,10 +7,10 @@ import os
 from PIL import Image
 
 # Constants
-LFW_DATASET_PATH = "./lfw-dataset"
-EMBEDDINGS_PATH = "./embeddings.npy"
-LABELS_PATH = "./labels.npy"
-INDEX_PATH = "./faiss_index.bin"
+LFW_DATASET_PATH = "./lfw-dataset" # Change this to the path of your LFW dataset
+EMBEDDINGS_PATH = "./db/embeddings.npy"
+LABELS_PATH = "./db/labels.npy"
+INDEX_PATH = "./db/faiss_index.bin"
 
 # Initialize FaceNet model
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -97,7 +97,10 @@ def main():
             if embedding is not None:
                 similar_labels, distances = find_similar_face(embedding, index, labels)
                 st.write(f"Most similar face: {similar_labels[0]}")
-                st.image(os.path.join(LFW_DATASET_PATH, similar_labels[0], f"{similar_labels[0]}_0001.jpg"), caption="Similar Image", use_column_width=True)
+                try :
+                    st.image(os.path.join(LFW_DATASET_PATH, similar_labels[0], f"{similar_labels[0]}_0001.jpg"), caption="Similar Image", use_column_width=True)
+                except:
+                    st.write("LFW dataset not provided.")
                 st.write(f"Distance: {distances[0]:.4f}")
             else:
                 st.error("No face detected in the uploaded image.")
